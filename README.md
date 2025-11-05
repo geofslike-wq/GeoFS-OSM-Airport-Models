@@ -8,9 +8,6 @@ These models are very basic but do the job in lack of any building
 ## List of airports
 - Washington Dulles International Airport (IAD/KIAD)
 ## How to install
-### Non userscript support
-Coming later
-### Userscript supprort (Tampermonkey, Greasemonkey, etc)
 
 Click on the file that says "Userscript.js"
 
