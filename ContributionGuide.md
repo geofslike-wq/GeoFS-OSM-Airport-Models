@@ -33,5 +33,76 @@ This guide will show you how to import your own custom model, or use OSM data an
 - Click export, and it should show up in the directory you selected
 - You should see (your file name).gltf, (your file name).bin, and some images.
 ### IMPORTANT!!! IF ANY OF YOUR FILES ARE LARGER THAN 20MB, THEN IT WILL NOT IMPORT. CONTACT thegreen121 ON DISCORD IF ANY OF YOUR FILES ARE LARGER THAN 20MB
-## Step 5 -  GitHub
+## Step 5 -  GitHub import + glTF editing
 - If you haven't already, create a GitHub account. 
+- Create a new repository
+### IMPORTANT!!! IT MUST BE PUBLIC FOR IT TO BE IMPORTED INTO THE GAME
+- Click Add file > Upload file
+- Upload all of your files and click Commit changes
+- Do not import anything into folders
+- Open (your file name).gltf and click the pencil icon to edit
+- Use Control + F (Command + F for MacOS) to open find. Search "images", and click next
+- It should scroll down to a section where you should be seeing items in this format:
+		{
+			"mimeType":"image/jpeg",
+			"name":"Image_9",
+			"uri":"Image_9.jpg"
+		},
+- In the last box, replace Image_9.jpg, with https://cdn.jsdelivr.net/gh/yourusername/repositoryname@latest/imagename.jpg
+- Replace yourusername with your username, repositoryname with your repository name, and imagename.jpg with your image name and its file extention (jpg, png, etc)
+- Now find "materials" and scroll down. It should be in this format
+  
+		{
+			"name":"Plaster002",
+			"normalTexture":{
+				"index":0
+			},
+			"occlusionTexture":{
+				"index":1
+			},
+			"pbrMetallicRoughness":{
+				"baseColorTexture":{
+					"index":2
+				},
+				"metallicRoughnessTexture":{
+					"index":1
+				}
+			}
+		},
+
+- Replace that with the format below, and fill in the name, normalTexture, occlusionTexture, baseColorTexture, and metallicRoughnessTexture from the existing material.
+- Do this for all materials. DO NOT CHANGE baseColorFactor, roughnessFactor, and emissiveFactor
+- 
+
+      {
+        "name": "Plaster002",
+        "normalTexture": {
+          "index": 0
+        },
+        "occlusionTexture": {
+          "index": 1
+        },
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 2
+          },
+          "metallicRoughnessTexture": {
+            "index": 1
+          },
+          "baseColorFactor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "roughnessFactor": 0.8
+        },
+        "emissiveFactor": [
+          0.01,
+          0.009,
+          0.006
+        ]
+      },
+
+  - Click "Commit changes" to save your changes
+  ## Step 6 - Importing and Submission
