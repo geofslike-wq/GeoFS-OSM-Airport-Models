@@ -19,7 +19,6 @@ Additionally you can also paste it into your browser console
 ## Images
 
 ![United 737 taxiing at IAD](https://i.ibb.co/HpM5Cdcv/image.png)
-
 United 737-700 taxiing at IAD
 
 ## Contribution
