@@ -72,7 +72,6 @@ This guide will show you how to import your own custom model, or use OSM data an
 
 - Replace that with the format below, and fill in the name, normalTexture, occlusionTexture, baseColorTexture, and metallicRoughnessTexture from the existing material.
 - Do this for all materials. DO NOT CHANGE baseColorFactor, roughnessFactor, and emissiveFactor
-- 
 
       {
         "name": "Plaster002",
@@ -104,5 +103,43 @@ This guide will show you how to import your own custom model, or use OSM data an
         ]
       },
 
-  - Click "Commit changes" to save your changes
-  ## Step 6 - Importing and Submission
+- Click "Commit changes" to save your changes
+## Step 6 - Importing and testing
+- Go to https://github.com/greenairways/GeoFS-OSM-Airport-Models
+- Open CustomModelLoader.js, and install it
+- In Tampermonkey, scroll down to const modelUrl = "https://cdn.jsdelivr.net/gh/username/repositoryname@latest/filename";
+- Replace username with your GitHub username, repositoryname with the repository name you saved your files, and filename as the name of your gltf file + file extention (gltf)
+- Scroll down to where it says:
+## IMPORTANT!!! YOU WILL NEED TO FINE-TUNE THESE VALUES MANY TIMES TO GET THE DESIRED RESULT
+  
+	  // --- Placement ---
+	  const lat = latitude;   // Latitude
+	  const lon = longitude;   // Longitude
+	  const alt = altitude;         // Altitude
+	  const heading = heading;      // Rotation
+
+- Replace these with the coordinates, altitude, and rotation.
+- Next scroll down a bit further
+  
+		scale: scale,              // Model Scale
+
+- Replace scale with the amount you want to mutiply
+- Click File > Save
+- Adjust values as needed and remember to save every time you adjust values. Adjust these values until satisifed.
+## Step 7 - Submission
+- Go to https://github.com/greenairways/GeoFS-OSM-Airport-Models/issues and create a new issue
+- Use the format below for your submisssion
+
+  		{
+            name: "EXAMPLE NAME",
+            modelUrl: "ModelUrlHere",
+            lat: Latitude,
+            lon: Longtitude,
+            alt: Altitude,
+            heading: Rotation,
+            scale: Scale
+        }
+
+  - Add the label "Import Sumbission"
+  - Click create
+  ## If you completed all of these steps correctly, your model should load in properly. If there are any problems or you are stuck, contact thegreen121 on Discord.
