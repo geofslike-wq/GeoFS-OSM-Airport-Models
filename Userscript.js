@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoFS OSM Airport Models (Multi-Airport)
 // @namespace    geofs-custom
-// @version      1.1
+// @version      1.1.5
 // @description  Loads OSM-style airport building models into GeoFS for missing airports
 // @author       thegreen121 (GXRdev)
 // @match        *://www.geo-fs.com/*
@@ -28,7 +28,7 @@
     const airportModels = [
         {
             name: "KIAD - Washington Dulles Intl",
-            modelUrl: "https://cdn.jsdelivr.net/gh/greenairways/test@latest/IADP4.gltf",
+            modelUrl: "https://cdn.jsdelivr.net/gh/greenairways/test@latest/IADFINAL1.gltf",
             lat: 38.947265,
             lon: -77.448265,
             alt: 86.5,
@@ -41,6 +41,15 @@
             lat: 47.44862,
             lon: -122.30257,
             alt: 114,
+            heading: 90,
+            scale: 1
+        },
+        {
+            name: "KDCA - Ronald-Reagan Washington National Airport",
+            modelUrl: "https://cdn.jsdelivr.net/gh/greenairways/test@latest/KDCA.gltf",
+            lat: 38.85586,
+            lon: -77.04295,
+            alt: 2,
             heading: 90,
             scale: 1
         }
