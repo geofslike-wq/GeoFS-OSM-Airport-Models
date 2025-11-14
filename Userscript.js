@@ -1,79 +1,59 @@
 // ==UserScript==
-// @name         GeoFS OSM Airport Models (Multi-Airport)
+// @name         GeoFS Extra OSM Airport Models
 // @namespace    geofs-custom
-// @version      1.1.5
-// @description  Loads OSM-style airport building models into GeoFS for missing airports
+// @version      1.3
+// @description  Loads airport building models from an external JSON file
 // @author       thegreen121 (GXRdev)
 // @match        *://www.geo-fs.com/*
 // @grant        none
 // ==/UserScript==
 
 (function () {
-    'use strict';
+    "use strict";
 
-    // --- Wait until GeoFS & Cesium are ready ---
+    // URL of external JSON config
+    const JSON_URL = "https://cdn.jsdelivr.net/gh/greenairways/GeoFS-OSM-Airport-Models@latest/airportdata.json";
+
+    // Wait for GeoFS + Cesium
     const checkInterval = setInterval(() => {
-        if (
-            typeof geofs !== "undefined" &&
+        if (typeof geofs !== "undefined" &&
             geofs.api &&
             geofs.api.viewer &&
-            typeof Cesium !== "undefined"
-        ) {
+            typeof Cesium !== "undefined") {
+
             clearInterval(checkInterval);
-            setTimeout(initCustomAirports, 2000);
+            setTimeout(loadAirportJSON, 1500);
         }
     }, 1500);
 
-    // --- Define airport models here ---
-    const airportModels = [
-        {
-            name: "KIAD - Washington Dulles Intl",
-            modelUrl: "https://cdn.jsdelivr.net/gh/greenairways/test@latest/IADFINAL1.gltf",
-            lat: 38.947265,
-            lon: -77.448265,
-            alt: 86.5,
-            heading: 90,
-            scale: 10
-        },
-        {
-            name: "KSEA - Seattle-Tacoma International Airport",
-            modelUrl: "https://cdn.jsdelivr.net/gh/greenairways/KSEA-models-for-GeoFS-Airport-Buildings-Addon@latest/KSEA.gltf",
-            lat: 47.44862,
-            lon: -122.30257,
-            alt: 114,
-            heading: 90,
-            scale: 1
-        },
-        {
-            name: "KDCA - Ronald-Reagan Washington National Airport",
-            modelUrl: "https://cdn.jsdelivr.net/gh/greenairways/test@latest/KDCA.gltf",
-            lat: 38.85586,
-            lon: -77.04295,
-            alt: 2,
-            heading: 90,
-            scale: 1
-        }
-        // ➕ Add more airports as needed
-    ];
 
-    // --- Initialization ---
-    function initCustomAirports() {
-        console.log("GeoFS loaded — adding custom airport models...");
-        airportModels.forEach(addModel);
+    // --- Load JSON file ---
+    function loadAirportJSON() {
+        console.log("📡 Fetching airport model list from JSON…");
+
+        fetch(JSON_URL)
+            .then(response => response.json())
+            .then(json => {
+                console.log("📁 Loaded airport list:", json);
+                json.forEach(addModel);
+            })
+            .catch(err => console.error("❌ Failed to load JSON:", err));
     }
 
-    // --- Helper: Add a model to the map ---
+
+    // --- Add model ---
     function addModel({ name, modelUrl, lat, lon, alt, heading, scale }) {
-        // Prevent duplicates
+
         if (geofs.api.viewer.entities.values.some(e => e.name === name)) {
             console.log(`⚠️ Model '${name}' already exists, skipping.`);
             return;
         }
 
         const position = Cesium.Cartesian3.fromDegrees(lon, lat, alt);
+
         const orientation = Cesium.Transforms.headingPitchRollQuaternion(
             position,
-            new Cesium.HeadingPitchRoll(Cesium.Math.toRadians(heading), 0, 0)
+            new Cesium.HeadingPitchRoll(Cesium.Math.toRadians(heading || 0), 0, 0)
         );
 
         const entity = geofs.api.viewer.entities.add({
@@ -91,7 +71,7 @@
             }
         });
 
-        console.log(`✅ Model for ${name} added:`, entity);
+        console.log(`✅ Loaded model: ${name}`);
     }
 
 })();
