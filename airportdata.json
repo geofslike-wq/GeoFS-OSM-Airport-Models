@@ -54,6 +54,15 @@
         "scale": 10
     },
     {
+        "name": "KDCA - Ronald Reagan Washington National Airport",
+        "modelUrl": "https://cdn.jsdelivr.net/gh/greenairways/Test2@latest/KDCA.gltf",
+        "lat": 38.85834818475116,
+        "lon": -77.04342301987681,
+        "alt": 5,
+        "heading": 90,
+        "scale": 10
+    },
+    {
         "name": "BUFFER",
         "modelUrl": "https://cdn.jsdelivr.net/gh/BUFFER/BUFFER@latest/BUFFER.gltf",
         "lat": 0,
