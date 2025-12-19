@@ -25,6 +25,10 @@ United 737-700 taxiing at IAD
 
 ![American A321ceo leaving the gates at DCA](https://i.ibb.co/jvDdqg1x/Screenshot-2025-11-06-191252.png)
 American A321ceo leaving the gates at DCA
+
+![Emirates A380 taking off from DXB](https://i.ibb.co/xSPbNP9f/image-1.png)
+Emirates A380 taking off from DXB
+
 ## Contribution
 
 There is a guide for how to contribute to the addon. Open ContributionGuide.md
