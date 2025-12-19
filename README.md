@@ -1,4 +1,8 @@
 # GeoFS-OSM-Airport-Models
+
+https://i.ibb.co/xSPbNP9f/image-1.png
+Image Credit: Featherway
+
 Also visit https://flygxr.com (greenairways)
 ## What this is
 Adds basic OSM models to airports that are missing buildings
