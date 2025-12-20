@@ -12,7 +12,8 @@
     "use strict";
 
     // URL of external JSON config
-    const JSON_URL = "https://raw.githubusercontent.com/greenairways/GeoFS-OSM-Airport-Models/refs/heads/main/airportdata.json";
+ const AIRPORT_DATA_URL =
+  "https://raw.githubusercontent.com/geofslike-wq/GeoFS-OSM-Airport-Models/main/airportdata.json";
 
     // Wait for GeoFS + Cesium
     const checkInterval = setInterval(() => {
