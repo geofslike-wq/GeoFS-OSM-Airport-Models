@@ -1,17 +1,20 @@
-[
-    {"RJTT": {
-  "name": "Tokyo Haneda",
-  "models": [
-    {
-      "model": "hangar",
-      "lat": 35.5489,
-      "lon": 139.7842,
-      "alt": 6,
-      "heading": 90,
-      "scale": 1
-    }
-  ]
+{
+  "RJTT": {
+    "name": "Tokyo Haneda",
+    "models": [
+      {
+        "name": "Terminal 1",
+        "url": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-RJTT-Models/main/rjtt_terminal1.glb",
+        "lat": 35.5497,
+        "lon": 139.7793,
+        "alt": 1,
+        "heading": 90,
+        "scale": 0.4
+      }
+    ]
+  }
 }
+
 
     },
     {
