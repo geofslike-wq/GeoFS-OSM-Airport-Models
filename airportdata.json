@@ -1,12 +1,18 @@
 [
+    {"RJTT": {
+  "name": "Tokyo Haneda",
+  "models": [
     {
-        "name": "RJTT - Washington Dulles International Airport",
-        "modelUrl": "https://cdn.jsdelivr.net/gh/greenairways/test@latest/IADFINAL1.gltf",
-        "lat": 38.947265,
-        "lon": -77.448265,
-        "alt": 86.5,
-        "heading": 90,
-        "scale": 10
+      "model": "hangar",
+      "lat": 35.5489,
+      "lon": 139.7842,
+      "alt": 6,
+      "heading": 90,
+      "scale": 1
+    }
+  ]
+}
+
     },
     {
         "name": "KSEA - Seattle-Tacoma International Airport",
