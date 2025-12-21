@@ -1,14 +1,45 @@
 
 [
-    {
-        "name": "KIAD - Washington Dulles International Airport",
-        "modelUrl": "https://cdn.jsdelivr.net/gh/greenairways/test@latest/IADFINAL1.gltf",
-        "lat": 38.947265,
-        "lon": -77.448265,
-        "alt": 86.5,
-        "heading": 90,
-        "scale": 10
-    },
+  {
+    "icao": "RJTT",
+    "name": "Tokyo International Airport (Haneda)",
+    "lat": 35.5494,
+    "lon": 139.7798,
+    "zoom": 16,
+    "osm": true,
+
+    "models": [
+      {
+        "name": "RJTT Terminal 1",
+        "modelUrl": "https://raw.githubusercontent.com/【geofslike-wq】/【GeoFS-OSM-Airport-Models】/main/RJTT_T1.glb",
+        "lat": 35.5491,
+        "lon": 139.7793,
+        "alt": 8,
+        "heading": 250,
+        "scale": 1.0
+      },
+      {
+        "name": "RJTT Terminal 2",
+        "modelUrl": "https://raw.githubusercontent.com/【geofslike-wq】/【GeoFS-OSM-Airport-Models】/main/RJTT_T2.glb",
+        "lat": 35.5530,
+        "lon": 139.7812,
+        "alt": 8,
+        "heading": 70,
+        "scale": 1.0
+      },
+      {
+        "name": "RJTT Terminal 3",
+        "modelUrl":  "https://raw.githubusercontent.com/【geofslike-wq】/【GeoFS-OSM-Airport-Models】/main/RJTT_T3.glb",
+        "lat": 35.5432,
+        "lon": 139.7685,
+        "alt": 8,
+        "heading": 45,
+        "scale": 1.0
+      }
+    ]
+  }
+]
+
     {
         "name": "KSEA - Seattle-Tacoma International Airport",
         "modelUrl": "https://cdn.jsdelivr.net/gh/greenairways/KSEA-models-for-GeoFS-Airport-Buildings-Addon@latest/KSEA.gltf",
