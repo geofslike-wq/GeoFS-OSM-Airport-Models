@@ -1,21 +1,13 @@
-{
-  "RJTT": {
-    "name": "Tokyo Haneda",
-    "models": [
-      {
-        "name": "Terminal 1",
-        "url": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-RJTT-Models/main/rjtt_terminal1.glb",
-        "lat": 35.5497,
-        "lon": 139.7793,
-        "alt": 1,
+
+[
+    {
+        "name": "KIAD - Washington Dulles International Airport",
+        "modelUrl": "https://cdn.jsdelivr.net/gh/greenairways/test@latest/IADFINAL1.gltf",
+        "lat": 38.947265,
+        "lon": -77.448265,
+        "alt": 86.5,
         "heading": 90,
-        "scale": 0.4
-      }
-    ]
-  }
-}
-
-
+        "scale": 10
     },
     {
         "name": "KSEA - Seattle-Tacoma International Airport",
@@ -80,18 +72,13 @@
         "heading": 121.5,
         "scale": 1.26
     },
-   "RJTT": {
-  "name": "Tokyo Haneda",
-  "models": [
     {
-      "name": "Terminal 1",
-      "url": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-RJTT-Models/main/rjtt_terminal1.glb",
-      "lat": 35.5497,
-      "lon": 139.7793,
-      "alt": 2,
-      "heading": 90,
-      "scale": 0.4
+        "name": "BUFFER",
+        "modelUrl": "https://cdn.jsdelivr.net/gh/BUFFER/BUFFER@latest/BUFFER.gltf",
+        "lat": 0,
+        "lon": 0,
+        "alt": 0,
+        "heading": 0,
+        "scale": 1
     }
-  ]
-}
-
+]
