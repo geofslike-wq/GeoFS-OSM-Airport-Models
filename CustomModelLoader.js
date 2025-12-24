@@ -1,60 +1,72 @@
+
 // ==UserScript==
-// @name         GeoFS Static Model Loader
-// @namespace    geofs-custom
-// @version      1.0
-// @description  Loads a static model to GeoFS
-// @author       thegreen121 (GXRdev)
-// @match        *://www.geo-fs.com/*
+// @name         GeoFS Static Model Loader (RJTT)
+// @namespace    https://github.com/geofslike-wq/GeoFS-OSM-Airport-Models
+// @version      1.1.0
+// @description  Load RJTT terminals (two parts) into GeoFS
+// @match        https://www.geo-fs.com/*
+// @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
+(function () {
+  'use strict';
 
-    const checkInterval = setInterval(() => {
-        if (typeof geofs !== "undefined" &&
-            geofs.api && geofs.api.viewer &&
-            typeof Cesium !== "undefined") {
-            clearInterval(checkInterval);
-            setTimeout(initCustomAirport, 2000);
-        }
-    }, 1500);
-
-    function initCustomAirport() {
-        console.log("GeoFS loaded — adding custom static model...");
-
-        // Use jsDelivr mirror to avoid GitHub CORS issues
-        const modelUrl = "https://cdn.jsdelivr.net/gh/username/repositoryname@latest/filename";
-
-        // --- Placement ---
-        const lat = latitude;   // Latitude
-        const lon = longitude;   // Longitude
-        const alt = altitude;         // Altitude
-        const heading = heading;      // Rotation
-
-        // --- Position and orientation ---
-        const position = Cesium.Cartesian3.fromDegrees(lon, lat, alt);
-        const orientation = Cesium.Transforms.headingPitchRollQuaternion(
-            position,
-            new Cesium.HeadingPitchRoll(
-                Cesium.Math.toRadians(heading), 0, 0
-            )
-        );
-
-        // --- Add the model ---
-        const entity = geofs.api.viewer.entities.add({
-            name: "GeoFS custom static model",
-            position: position,
-            orientation: orientation,
-            model: {
-                uri: modelUrl,
-                scale: scale,              // Model Scale
-                minimumPixelSize: 128,
-                maximumScale: 2000
-            }
-        });
-
-        console.log("✅ Model entity added:", entity);
-        geofs.api.viewer.flyTo(entity); // Auto-fly to the model
+  const MODELS = [
+    {
+      name: "RJTT - Terminal 1 / Part A",
+      url: "https://raw.githubusercontent.com/geofslike-wq/GeoFS-OSM-Airport-Models/main/rjtt_terminal1.gltf",
+      lat: 35.553300,
+      lon: 139.781500,
+      alt: 6.0,
+      heading: 0.0,   // 必要なら160度に
+      scale: 1.0
+    },
+    {
+      name: "RJTT - Terminal 1 / Part B",
+      url: "https://raw.githubusercontent.com/geofslike-wq/GeoFS-OSM-Airport-Models/main/taminalRJTT.gltf",
+      lat: 35.553300,
+      lon: 139.781500,
+      alt: 6.0,
+      heading: 0.0,
+      scale: 1.0
     }
+  ];
+
+  const checkInterval = setInterval(() => {
+    if (typeof geofs !== "undefined" &&
+        geofs.api && geofs.api.viewer && Cesium) {
+      clearInterval(checkInterval);
+      setTimeout(initRJTT, 1500);
+    }
+  }, 500);
+
+  function initRJTT() {
+    console.log("[RJTT Loader] GeoFS ready, loading RJTT models…");
+    MODELS.forEach(addModelEntity);
+  }
+
+  function addModelEntity(entry) {
+    const position = Cesium.Cartesian3.fromDegrees(entry.lon, entry.lat, entry.alt || 0);
+    const orientation = Cesium.Transforms.headingPitchRollQuaternion(
+      position,
+      new Cesium.HeadingPitchRoll(
+        Cesium.Math.toRadians(entry.heading || 0), 0, 0
+      )
+    );
+
+    const entity = geofs.api.viewer.entities.add({
+      name: entry.name,
+      position,
+      orientation,
+      model: {
+        uri: entry.url,      // Raw glTF
+        scale: entry.scale || 1.0,
+        minimumPixelSize: 128,
+        maximumScale: 2000
+      }
+    });
+
+    console.log("[RJTT Loader] added:", entry.name, entity);
+  }
 })();
