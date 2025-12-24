@@ -1,24 +1,24 @@
 
-{
-  "icao": "RJTT",
-  "name": "Tokyo Haneda",
-  "models": [
-    {
-      "url": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-Models/main/taminal1.glb",
-      "scale": 1,
-      "position": [139.781, 35.552, 0],
-      "rotation": [0, 0, 0]
-    },
-    {
-      "url": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-Models/main/taminal2.glb",
-      "scale": 1,
-      "position": [139.781, 35.552, 0],
-      "rotation": [0, 0, 0]
-    }
-  ]
-}
 
-
+[
+  {
+    "name": "RJTT - Tokyo Haneda (Terminal 1 / Part A)",
+    "modelUrl": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-OSM-Airport-Models/main/rjtt_terminal1.gltf",
+    "lat": 35.553300,
+    "lon": 139.781500,
+    "alt": 6.0,
+    "heading": 0.0,
+    "scale": 1.0
+  },
+  {
+    "name": "RJTT - Tokyo Haneda (Terminal 1 / Part B)",
+    "modelUrl": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-OSM-Airport-Models/main/taminalRJTT.gltf",
+    "lat": 35.553300,
+    "lon": 139.781500,
+    "alt": 6.0,
+    "heading": 0.0,
+    "scale": 1.0
+  }
     {
         "name": "KSEA - Seattle-Tacoma International Airport",
         "modelUrl": "https://cdn.jsdelivr.net/gh/greenairways/KSEA-models-for-GeoFS-Airport-Buildings-Addon@latest/KSEA.gltf",
