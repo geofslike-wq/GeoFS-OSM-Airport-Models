@@ -1,24 +1,23 @@
-[
-  {
-    "icao": "RJTT",
-    "name": "Tokyo International Airport (Haneda)",
-    "lat": 35.5494,
-    "lon": 139.7798,
-    "zoom": 16,
-    "osm": true,
-    "models": [
-      {
-        "name": "RJTT Terminal 1",
-        "modelUrl": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-RJTT-Models/main/rjtt_terminal1.glb",
-        "lat": 35.5497,
-        "lon": 139.7793,
-        "alt": 5,
-        "heading": 90,
-        "scale": 1
-      }
-    ]
-  }
-]
+
+{
+  "icao": "RJTT",
+  "name": "Tokyo Haneda",
+  "models": [
+    {
+      "url": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-Models/main/taminal1.glb",
+      "scale": 1,
+      "position": [139.781, 35.552, 0],
+      "rotation": [0, 0, 0]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/geofslike-wq/GeoFS-Models/main/taminal2.glb",
+      "scale": 1,
+      "position": [139.781, 35.552, 0],
+      "rotation": [0, 0, 0]
+    }
+  ]
+}
+
 
     {
         "name": "KSEA - Seattle-Tacoma International Airport",
