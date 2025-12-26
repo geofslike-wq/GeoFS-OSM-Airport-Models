@@ -3,9 +3,9 @@
     "name": "RJTT_Terminal2_v1",
     "url": "https://raw.githubusercontent.com/geofslike-wq/-GeoFS-OSM-Airport-Models/main/rjtt_terminal1.glb",
     "lat": 35.553333,
-    "lon": 139.781111;
+    "lon": 139.781111
     "alt": 6.0,
-    "heading": 512,
+    "heading": 90,
     "pitch": 0.0,
     "roll": 0.0,
     "scale": 1.0
