@@ -1,12 +1,10 @@
 {
-  "name": "rjtt_terminal2",
+  "name": "rjtt_terminal2_v1",
   "url": "https://raw.githubusercontent.com/geofslike-wq/-GeoFS-OSM-Airport-Models/main/rjtt_terminal1.glb",
-  "lon": 139.77905,
-  "lat": 35.55205,
+  "lat": 35.553333,
+  "lon": 139.781111,
   "alt": 6.0,
   "heading": 340,
-  "pitch": 0,
-  "roll": 0,
   "scale": 1.0
 }
   {  "name": "KSEA - Seattle-Tacoma International Airport",
