@@ -9,17 +9,22 @@
     "pitch": 0.0,
     "roll": 0.0,
     "scale": 1.0
+  {
   }
-  {    　 
-    "name": "Haneda Terminal 1",
-    "url": "https://raw.githubusercontent.com/geofslike-wq/-GeoFS-OSM-Airport-Models/main/taminal1.glb",
-    "lat": 　35.55076,
-    "lon":  139.78970,
-    "alt": -15.0,
-   "heading": -630,
-    "scale": 1.0
-   }
+]
+[
+ {
+   "name": "Haneda Terminal 1",
+      "url": "https://raw.githubusercontent.com/geofslike-wq/-GeoFS-OSM-Airport-Models/main/taminal1.glb",
+      "lat":  35.55076,
+      "lon": 139.78970,
+      "alt": -15.0,
+      "heading": -630,
+      "scale": 1.0
+    }
   ]
+}
+
 {  "name": "KSEA - Seattle-Tacoma International Airport",
         "modelUrl": "https://cdn.jsdelivr.net/gh/greenairways/KSEA-models-for-GeoFS-Airport-Buildings-Addon@latest/KSEA.gltf",
         "lat": 47.44862,
